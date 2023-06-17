@@ -20,7 +20,7 @@ Route::get('/', function () {
     else
     */
         return redirect()->route('home');
-    
+
 });
 
 Auth::routes();
@@ -28,7 +28,7 @@ Auth::routes();
 
 Route::get('/home', \App\Http\Livewire\Arsys\Idx::class)->name('home')->middleware('cas.auth');
 Route::get('/user/refresh', function () {
-    \Session::flush();
+    Session::flush();
     cas()->logout();
     return redirect('/');
 })->name('user.refresh');
@@ -38,10 +38,12 @@ Route::get('/user/profile/view', \App\Http\Livewire\Arsys\User\Profile\View\Idx:
 Route::get('/user/profile/edit', \App\Http\Livewire\Arsys\User\Profile\Edit\Idx::class)->name('arsys.user.profile.edit');
 Route::get('/admin/user', \App\Http\Livewire\Arsys\Admin\User\Idx::class)->name('arsys.admin.user');
 Route::get('/admin/config/institution', \App\Http\Livewire\Arsys\Admin\Config\Institution\Idx::class)->name('arsys.admin.config.institution');
+Route::get('/plt/idx', \App\Http\Livewire\Plt\Idx::class)->name('plt.idx');
+Route::get('/plt2/idx', \App\Http\Livewire\Plt2\Idx::class)->name('plt2.idx');
+Route::get('monitoring/idx', \App\Http\Livewire\Monitoring\Idx::class)->name('monitoring.idx');
 
-//ATJ
-Route::get('/atj/landing-page',\App\Http\Livewire\atj\Idx::class)->name('atj.home');
-Route::get('/Reviewer/landing-page',\App\Http\Livewire\Reviewer\Idx::class)->name('Reviewer.home');
+
+
 
 
 

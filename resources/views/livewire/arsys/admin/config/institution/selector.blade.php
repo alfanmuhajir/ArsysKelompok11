@@ -23,6 +23,7 @@
             </div>
         @endif
     </div>
+
     @push('script')
     <script>
         $(document).ready(function(){
@@ -41,8 +42,8 @@
                 $('#faculty').removeClass('active');
                 $('#department').removeClass('active');
             });
-            
-    }); 
+
+    });
     </script>
     @endpush
 </div>

@@ -1,10 +1,14 @@
 <?php
 
-namespace App\Http\Livewire\ArSys\Data;
+namespace App\Http\Livewire\Arsys\Data;
 
+use App\Models\ArSys\Student;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-use App\Models\ArSys\Student;
+use App\Models\ArSys\StudyProgram;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\DB;
+
 
 class StudentsTable extends DataTableComponent
 {
@@ -18,16 +22,22 @@ class StudentsTable extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make("Id", "id")
+            Column::make("NIM", "student_id")
                 ->sortable(),
-            Column::make("Name", "name")
+            Column::make("Nama Depan", "first_name")
+            ->sortable(),
+            Column::make("Nama Belakang", "last_name")
+            ->sortable(),
+            Column::make("Nama Lengkap", "full_name")
+            ->sortable(),
+            // Column::make('FullName')->searchable()->sortable(),
+            Column::make("Program Studi", "program.description")
                 ->sortable(),
-            Column::make("Email", "email")
+            Column::make("Spesialisasi", "specialization.description")
                 ->sortable(),
-            Column::make("Created at", "created_at")
-                ->sortable(),
-            Column::make("Updated at", "updated_at")
+            Column::make("Status", "status.description")
                 ->sortable(),
         ];
     }
+
 }

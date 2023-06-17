@@ -226,29 +226,29 @@ return [
 
     'menu' => [
 
-        [
-            'text'       => 'Reviewer',
-            'route'      => 'Reviewer.home',
-            'icon'      => 'far fa-fw fa-file',
-            //'roles'     => ['reviewer', 'committee','author'],
-        ],
-        [
-            'text'       => 'Aplikasi Teknologi Jaringan',
-            'route'      => 'atj.home',
-            'icon'      => 'far fa-fw fa-file',
-            //'roles'     => ['reviewer', 'committee','author'],
-        ],
 
-  
+
         [
             'text'       => 'User Management',
             'route'      => 'arsys.admin.user',
             'icon'      => 'far fa-fw fa-file',
             //'roles'     => ['reviewer', 'committee','author'],
         ],
+        [
+            'text'       => 'Biodata',
+            'route'      => 'plt.idx',
+            'icon'      => 'far fa-fw fa-file',
+            //'roles'     => ['reviewer', 'committee','author'],
+        ],
+        [
+            'text'       => 'Aplikasi Teknologi Jaringan',
+            'route'      => 'plt2.idx',
+            'icon'      => 'far fa-fw fa-file',
+            //'roles'     => ['reviewer', 'committee','author'],
+        ],
 
         [
-            'text'       => 'Institution',
+            'text'       => 'Kaprodi',
             'route'      => 'arsys.admin.config.institution',
             'icon'      => 'far fa-fw fa-file',
             //'roles'     => ['reviewer', 'committee','author'],
@@ -260,6 +260,14 @@ return [
             'icon'      => 'far fa-fw fa-file',
             //'roles'     => ['reviewer', 'committee','author'],
         ],
+
+        [
+            'text'       => 'Siswa',
+            'route'      => 'monitoring.idx',
+            'icon'      => 'far fa-fw fa-file',
+            //'roles'     => ['reviewer', 'committee','author'],
+        ],
+
     ],
 
     /*

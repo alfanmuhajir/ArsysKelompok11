@@ -4,6 +4,7 @@ namespace App\Models\ArSys;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Student extends Model
 {
@@ -21,5 +22,12 @@ class Student extends Model
     public function supervisor() {
         return $this->belongsTo(Staff::class, 'supervisor_id', 'id' );
     }
+    public function status() {
+        return $this->belongsTo(StatusMilestone::class, 'status', 'id' );
+    }
+    public function getFullNameAttribute() { return $this->first_name . ' ' . $this->last_name; }
+
+    protected $appends = [ 'full_name' ];
+
 
 }
